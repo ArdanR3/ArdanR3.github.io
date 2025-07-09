@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Test PWA App</title>
+  <title>PWA Ardan</title>
   <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#ffffff" />
 </head>
 <body>
   <h1>Hallo, Nama Saya Ardan!</h1>
+  <p>Ini adalah contoh aplikasi PWA sederhana.</p>
+
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js').then(() => {
-        console.log("Service Worker Registered");
-      });
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log("Service Worker registered!"))
+        .catch(err => console.error("Service Worker failed:", err));
     }
   </script>
 </body>
